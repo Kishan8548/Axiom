@@ -7,7 +7,7 @@
     android:background="@color/monolith_bg"
     tools:context=".ui.history.HistoryFragment">
 
-    <!-- Top Bar -->
+
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         android:background="#332F80ED"
         app:layout_constraintTop_toBottomOf="@id/topBar" />
 
-    <!-- 🔥 IMPROVED EMPTY STATE -->
+
     <LinearLayout
         android:id="@+id/emptyStateContainer"
         android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
 
     </LinearLayout>
 
-    <!-- 🔥 THREAD LIST -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvThreads"
         android:layout_width="match_parent"

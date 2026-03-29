@@ -2,7 +2,7 @@ package com.etgenai.app.data.model
 
 import com.google.gson.annotations.SerializedName
 
-// ── Chat ─────────────────────────────────────────────────────────────────────
+
 
 data class ChatRequest(
     @SerializedName("message") val message: String,
@@ -23,7 +23,7 @@ data class PendingEmail(
     @SerializedName("body") val body: String
 )
 
-// ── Email Approval ───────────────────────────────────────────────────────────
+
 
 data class EmailApprovalRequest(
     @SerializedName("thread_id") val threadId: String,
@@ -37,7 +37,7 @@ data class EmailApprovalResponse(
     @SerializedName("email") val email: Map<String, String>? = null
 )
 
-// ── Threads ──────────────────────────────────────────────────────────────────
+
 
 data class NewThreadResponse(
     @SerializedName("thread_id") val threadId: String
@@ -67,7 +67,7 @@ data class ThreadSummary(
     @SerializedName("last_active") val lastActive: String? = null
 )
 
-// ── RAG ──────────────────────────────────────────────────────────────────────
+
 
 data class RagIngestUrlRequest(
     @SerializedName("url") val url: String,
@@ -90,7 +90,7 @@ data class UploadPdfResponse(
     @SerializedName("size_kb") val sizeKb: Double = 0.0
 )
 
-// ── Health & Scheduler ───────────────────────────────────────────────────────
+
 
 data class HealthResponse(
     @SerializedName("status") val status: String,
@@ -110,7 +110,7 @@ data class SchedulerJob(
     @SerializedName("next_run") val nextRun: String? = null
 )
 
-// ── UI Models ────────────────────────────────────────────────────────────────
+
 
 sealed class ChatItem {
     data class UserMsg(val text: String) : ChatItem()

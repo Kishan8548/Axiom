@@ -41,15 +41,14 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Use activity-scoped ViewModel so the thread survives tab switches,
-        // UNLESS we came from History with a specific thread to open.
+
         val incomingThreadId: String? = arguments?.getString("threadId")
 
         viewModel = if (incomingThreadId != null) {
-            // New scope per thread when loading from history
+
             ViewModelProvider(this)[ChatViewModel::class.java]
         } else {
-            // Shared scope so chat state survives nav tab switches
+
             ViewModelProvider(requireActivity())[ChatViewModel::class.java]
         }
 
@@ -63,13 +62,13 @@ class ChatFragment : Fragment() {
         }
         binding.rvChat.adapter = adapter
 
-        // Observe combined item list (messages + inline approval cards)
+
         viewModel.chatItems.observe(viewLifecycleOwner) { items ->
             adapter.setItems(items)
             if (items.isNotEmpty()) binding.rvChat.scrollToPosition(items.size - 1)
         }
 
-        // Show thread ID in header
+
         viewModel.threadId.observe(viewLifecycleOwner) { id ->
             binding.tvThreadId.text = if (id.isNullOrEmpty()) "" else "THREAD: ${id.take(8)}"
         }
@@ -95,16 +94,16 @@ class ChatFragment : Fragment() {
             clearPendingPdf()
         }
 
-        // Load history if opened from history screen
+
         if (incomingThreadId != null && viewModel.currentThreadId != incomingThreadId) {
             viewModel.loadThread(incomingThreadId)
         }
 
-        // ── Drawer UI Setup ──────────────────────────────────────────
+
 
         binding.btnMenu.setOnClickListener {
             binding.drawerLayout.openDrawer(GravityCompat.START)
-            viewModel.fetchRecentThreads() // Refresh on open
+            viewModel.fetchRecentThreads()
         }
 
         val btnNewChat = binding.navView.findViewById<LinearLayout>(R.id.btnNewChat)

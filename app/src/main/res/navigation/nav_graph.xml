@@ -10,7 +10,7 @@
         android:name="com.etgenai.app.ui.chat.ChatFragment"
         android:label="Chat"
         tools:layout="@layout/fragment_chat">
-        <!-- Argument to open a specific existing thread -->
+
         <argument
             android:name="threadId"
             app:argType="string"
@@ -23,7 +23,7 @@
         android:name="com.etgenai.app.ui.history.HistoryFragment"
         android:label="History"
         tools:layout="@layout/fragment_history">
-        <!-- Action to open thread in chat -->
+
         <action
             android:id="@+id/action_history_to_chat"
             app:destination="@id/chatFragment"

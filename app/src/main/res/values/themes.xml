@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.Etgenai" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Main Application Colors -->
+
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/on_primary</item>
         <item name="colorPrimaryContainer">@color/primary_container</item>
@@ -16,7 +16,7 @@
         <item name="colorError">@color/error</item>
         <item name="colorErrorContainer">@color/error_container</item>
         
-        <!-- Background and Surfaces -->
+
         <item name="android:background">@color/monolith_bg</item>
         <item name="android:windowBackground">@color/monolith_bg</item>
         <item name="colorSurface">@color/surface_base</item>
@@ -30,7 +30,7 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
-    <!-- Active pill indicator for bottom nav -->
+
     <style name="App.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@android:color/transparent</item>
         <item name="shapeAppearance">@style/NavPillShape</item>

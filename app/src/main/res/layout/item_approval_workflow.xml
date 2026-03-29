@@ -16,7 +16,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Header -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
             android:textStyle="bold"
             android:layout_marginBottom="12dp"/>
 
-        <!-- PLAN -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                 android:padding="12dp"/>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- ACTIONS -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
             android:lineSpacingExtra="2dp"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Buttons -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

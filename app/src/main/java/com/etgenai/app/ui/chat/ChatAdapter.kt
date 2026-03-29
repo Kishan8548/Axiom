@@ -61,7 +61,7 @@ class ChatAdapter(
 
     override fun getItemCount() = items.size
 
-    // ─── View Holders ───────────────────────────────────────────────────────────
+
 
     class UserVH(view: View) : RecyclerView.ViewHolder(view) {
         private val tvText: TextView = view.findViewById(R.id.tvUserMsg)

@@ -38,7 +38,7 @@ class SchedulerFragment : Fragment() {
                     if (running) R.color.primary else R.color.error
                 )
             )
-            // Display individual job info
+
             val jobsText = status.jobs.joinToString("\n") { job ->
                 "${job.name}: ${job.nextRun ?: "No scheduled run"}"
             }.ifEmpty { "No jobs configured" }

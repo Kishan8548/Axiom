@@ -33,7 +33,7 @@ class HistoryFragment : Fragment() {
         viewModel = ViewModelProvider(this)[HistoryViewModel::class.java]
 
         adapter = ThreadAdapter { threadId ->
-            // Navigate to ChatFragment and load this thread's history
+
             val bundle = bundleOf("threadId" to threadId)
             findNavController().navigate(
                 R.id.action_history_to_chat,

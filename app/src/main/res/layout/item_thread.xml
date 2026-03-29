@@ -17,20 +17,20 @@
         android:orientation="vertical"
         android:padding="14dp">
 
-        <!-- TOP ROW -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical">
 
-            <!-- ICON -->
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_nav_chat"
                 app:tint="@color/primary" />
 
-            <!-- THREAD -->
+
             <TextView
                 android:id="@+id/tvThreadId"
                 android:layout_width="0dp"
@@ -43,7 +43,7 @@
                 android:singleLine="true"
                 android:ellipsize="middle" />
 
-            <!-- MESSAGE COUNT -->
+
             <TextView
                 android:id="@+id/tvMessageCount"
                 android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
                 android:textSize="11sp" />
         </LinearLayout>
 
-        <!-- MESSAGE PREVIEW -->
+
         <TextView
             android:id="@+id/tvLastMessage"
             android:layout_width="match_parent"

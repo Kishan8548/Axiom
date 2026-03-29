@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="#0F131A">
 
-    <!-- HEADER -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +14,7 @@
         android:paddingHorizontal="20dp"
         android:paddingBottom="12dp">
 
-        <!-- App name -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                 android:letterSpacing="0.04" />
         </LinearLayout>
 
-        <!-- New Chat Button -->
+
         <LinearLayout
             android:id="@+id/btnNewChat"
             android:layout_width="match_parent"
@@ -67,14 +67,14 @@
 
     </LinearLayout>
 
-    <!-- Divider -->
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#1A2235"
         android:layout_marginHorizontal="20dp" />
 
-    <!-- Section Label -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
         android:textAllCaps="true"
         android:textStyle="bold" />
 
-    <!-- Threads -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDrawerThreads"
         android:layout_width="match_parent"

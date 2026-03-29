@@ -16,7 +16,7 @@ import java.util.UUID
 
 class ChatViewModel : ViewModel() {
 
-    // Ordered list of all items to render in the RecyclerView
+
     private val _chatItems = MutableLiveData<List<ChatItem>>(emptyList())
     val chatItems: LiveData<List<ChatItem>> = _chatItems
 
@@ -31,7 +31,7 @@ class ChatViewModel : ViewModel() {
 
     var currentThreadId: String? = null
 
-    // ── Send Message ────────────────────────────────────────────────────────────
+
 
     fun sendMessage(text: String) {
         addItem(ChatItem.UserMsg(text))
@@ -47,10 +47,9 @@ class ChatViewModel : ViewModel() {
                     currentThreadId = res.threadId
                     _threadId.value = res.threadId
 
-                    // Show agent reply with tools used
+
                     addItem(ChatItem.AiMsg(res.reply, res.toolsUsed ?: emptyList()))
 
-                    // Show inline email approval card if needed
                     if (res.emailApprovalRequired && res.pendingEmail != null) {
                         addItem(ChatItem.EmailApproval(res.pendingEmail))
                     }
@@ -64,7 +63,7 @@ class ChatViewModel : ViewModel() {
         }
     }
 
-    // ── Send Message With PDF Attached ──────────────────────────────────────────
+
 
     fun sendMessageWithPdf(text: String, file: File?) {
         if (file != null) {
@@ -74,12 +73,11 @@ class ChatViewModel : ViewModel() {
                     val requestFile = file.asRequestBody("application/pdf".toMediaTypeOrNull())
                     val body = MultipartBody.Part.createFormData("file", file.name, requestFile)
 
-                    // Generate a thread ID if this is a brand new chat
+
                     if (currentThreadId == null) {
                         currentThreadId = UUID.randomUUID().toString()
                     }
                     
-                    // Feed the thread ID as the collection so the backend RAG queries this specific session
                     val currentId = currentThreadId ?: "default"
                     val collectionName = currentId.toRequestBody("text/plain".toMediaTypeOrNull())
 
@@ -104,7 +102,7 @@ class ChatViewModel : ViewModel() {
         }
     }
 
-    // ── Email Approval ───────────────────────────────────────────────────────────
+
 
     fun approveEmail(decision: String) {
         removeLastCard<ChatItem.EmailApproval>()
@@ -126,7 +124,7 @@ class ChatViewModel : ViewModel() {
         }
     }
 
-    // ── Load Existing Thread ─────────────────────────────────────────────────────
+
 
     fun loadThread(threadId: String) {
         currentThreadId = threadId
@@ -159,7 +157,7 @@ class ChatViewModel : ViewModel() {
         }
     }
 
-    // ── Load Recent Threads ──────────────────────────────────────────────────────
+
 
     fun fetchRecentThreads() {
         viewModelScope.launch {
@@ -169,12 +167,12 @@ class ChatViewModel : ViewModel() {
                     _recentThreads.value = response.body()!!.threads
                 }
             } catch (e: Exception) {
-                // Ignore silent error for drawer
+
             }
         }
     }
 
-    // ── Reset Thread ─────────────────────────────────────────────────────────────
+
 
     fun resetThread() {
         viewModelScope.launch {
@@ -193,7 +191,7 @@ class ChatViewModel : ViewModel() {
         }
     }
 
-    // ── RAG & PDF Ingestion ──────────────────────────────────────────────────────
+
 
     fun uploadPdf(file: File, collection: String = "default") {
         addItem(ChatItem.Loading("Ingesting PDF..."))
@@ -247,7 +245,7 @@ class ChatViewModel : ViewModel() {
         }
     }
 
-    // ── Helpers ──────────────────────────────────────────────────────────────────
+
 
     private fun addItem(item: ChatItem) {
         val list = _chatItems.value?.toMutableList() ?: mutableListOf()

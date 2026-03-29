@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/monolith_bg">
 
-    <!-- Top bar -->
+
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:layout_marginStart="8dp" />
     </LinearLayout>
 
-    <!-- Divider -->
+
     <View
         android:id="@+id/topDivider"
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
         android:background="#332F80ED"
         app:layout_constraintTop_toBottomOf="@id/topBar" />
 
-    <!-- Content -->
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -54,7 +54,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Section Title -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                 android:textSize="12sp"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Status Card -->
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Running Status -->
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
                             tools:text="Running" />
                     </LinearLayout>
 
-                    <!-- Next Email -->
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
                         android:layout_marginBottom="10dp"
                         tools:text="Not scheduled" />
 
-                    <!-- Next Briefing -->
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -143,7 +143,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Manual Section -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -152,13 +152,13 @@
                 android:textSize="12sp"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Buttons -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Email Button -->
+
                 <Button
                     android:id="@+id/btnRunEmailNow"
                     android:layout_width="match_parent"
@@ -168,7 +168,7 @@
                     android:textColor="@color/primary"
                     android:layout_marginBottom="8dp"/>
 
-                <!-- Briefing Button (YOUR YELLOW ONE) -->
+
                 <Button
                     android:id="@+id/btnRunBriefingNow"
                     android:layout_width="match_parent"
